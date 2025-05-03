@@ -1,0 +1,51 @@
+@use "../base/base.scss" as *;
+@use "sass:map";
+
+.home {
+  font-family: map.get($font, font-courier);
+  height: $height;
+  & main {
+    & .head {
+      & .title {
+        @include clamp(font-size, 1.5rem, 5vw, 2.5rem);
+        opacity: 0;
+        animation: head-text 0s linear forwards;
+      }
+      @for $i from 0 through 28 {
+        .title-#{$i} {
+          animation-delay: #{$i * 0.2s};
+        }
+      }
+    }
+    & .sub {
+      & .content {
+        @include clamp(font-size, 0.8rem, 2vw, 1rem);
+        opacity: 0;
+        animation: sub-text 0s linear forwards;
+      }
+      @for $i from 0 through 208 {
+        .content-#{$i} {
+          animation-delay: #{$i * 0.03s};
+        }
+      }
+    }
+  }
+}
+
+@keyframes head-text {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes sub-text {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

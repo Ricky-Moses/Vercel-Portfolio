@@ -1,0 +1,56 @@
+@use "../base/base.scss" as *;
+@use "sass:map";
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  width: 100vw;
+  height: 100vh;
+  background: #f0f0f0;
+
+  &.fade-out {
+    animation: fade-out 1s ease;
+  }
+
+  & .box {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #afafaf60;
+  }
+
+  .grid-text {
+    @include absolute(50%, 50%, -50%, -50%, 1);
+    & .letter {
+      font-family: map.get($font, font-courier);
+      font-variant: small-caps;
+      @include clamp(font-size, 1rem, 7vw, 5rem);
+      opacity: 0;
+      animation: fadeUp .2s ease forwards;
+    }
+    @for $i from 0 through 15 {
+      .letter-#{$i} {
+        animation-delay: #{$i * 0.2}s;
+      }
+    }
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

@@ -1,35 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect, useState } from "react";
+// Router
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+// Intro Page
+import Open from "./components/Utilities/Open";
+// Layouts
+import Header from "./components/Layouts/Header";
+// Pages
+import Home from "./components/pages/Home";
+import About from './components/pages/About';
+import Skill from './components/pages/Skill';
+import Project from './components/pages/Project';
+import Contact from './components/pages/Contact';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [showIntro, setShowIntro] = useState(true); // For Developing need to - {true}
+  const [isFade, setIsFade] = useState(false);
+
+  useEffect(() => {
+    if (showIntro) {
+      const fadeTimer = setTimeout(() => {
+        setIsFade(true);
+      }, 3500);
+
+      const introTimer = setTimeout(() => {
+        setShowIntro(false);
+      }, 4100);
+
+      return () => {
+        clearTimeout(fadeTimer);
+        clearTimeout(introTimer);
+      };
+    }
+  }, [showIntro]);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {showIntro ? (<Open fadingOut={isFade} />) : (
+        <Router>
+          <Routes>
+            <Route path="/" element={<Header />}>
+              <Route index element={<Home />} />
+              <Route path="about" element={<About />} />
+              <Route path="skill" element={<Skill />} />
+              <Route path="project" element={<Project />} />
+              <Route path="contact" element={<Contact />} />
+            </Route>
+          </Routes>
+        </Router>
+      )}
     </>
   )
-}
+};
 
-export default App
+export default App;

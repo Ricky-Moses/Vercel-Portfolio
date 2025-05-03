@@ -1,0 +1,33 @@
+@use "../base/base.scss" as *;
+@use "sass:map";
+
+.header {
+  font-family: map.get($font, font-courier);
+  & .logo {
+    @include clamp(font-size, 1rem, 5vw, 1.5rem);
+    font-variant: small-caps;
+  }
+  & .menu {
+    & .menu-link {
+        overflow: hidden;
+      & .text-link {
+        @include clamp(font-size, 0.8rem, 3vw, 1.2rem);
+        animation-name: move-right;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+      }
+    }
+  }
+}
+
+@keyframes move-right {
+  0% {
+    transform: translateX(-120px);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
