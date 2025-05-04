@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 // Router
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-// Intro Page
+import { Routes, Route, useNavigate } from 'react-router-dom'
+// Utilities
 import Open from "./components/Utilities/Open";
+import Swipe from "./components/Utilities/Swipe";
 // Layouts
 import Header from "./components/Layouts/Header";
 // Pages
@@ -15,6 +16,7 @@ import Contact from './components/pages/Contact';
 const App = () => {
   const [showIntro, setShowIntro] = useState(false); // For Developing need to - {true}
   const [isFade, setIsFade] = useState(false);
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (showIntro) {
@@ -24,6 +26,7 @@ const App = () => {
 
       const introTimer = setTimeout(() => {
         setShowIntro(false);
+        navigate('/')
       }, 4100);
 
       return () => {
@@ -31,23 +34,22 @@ const App = () => {
         clearTimeout(introTimer);
       };
     }
-  }, [showIntro]);
-
+  }, [showIntro, navigate]);
   return (
     <>
+    <Swipe>
       {showIntro ? (<Open fadingOut={isFade} />) : (
-        <Router>
-          <Routes>
-            <Route path="/" element={<Header />}>
-              <Route index element={<Home />} />
-              <Route path="about" element={<About />} />
-              <Route path="skill" element={<Skill />} />
-              <Route path="project" element={<Project />} />
-              <Route path="contact" element={<Contact />} />
-            </Route>
-          </Routes>
-        </Router>
+        <Routes>
+          <Route path="/" element={<Header />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="skill" element={<Skill />} />
+            <Route path="project" element={<Project />} />
+            <Route path="contact" element={<Contact />} />
+          </Route>
+        </Routes>
       )}
+    </Swipe>
     </>
   )
 };
