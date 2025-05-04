@@ -7,38 +7,52 @@
   height: $height;
   & main {
     & .head {
-      & .title {
-        @include clamp(font-size, 1.5rem, 5vw, 2.5rem);
-        opacity: 0;
-        animation: head-text 0s linear forwards;
-      }
-      @for $i from 0 through 28 {
-        .title-#{$i} {
-          animation-delay: #{$i * 0.2s};
+      &.animated {
+        & .title {
+          @include clamp(font-size, 1.5rem, 5vw, 2.5rem);
+          opacity: 0;
+          animation: head-text 0s linear forwards;
         }
+        @for $i from 0 through 28 {
+          .title-#{$i} {
+            animation-delay: #{$i * 0.2s};
+          }
+        }
+      }
+      &.static {
+        @include clamp(font-size, 1.5rem, 5vw, 2.5rem);
+        opacity: 1;
+        animation: none !important;
       }
     }
     & .sub {
-      & .content {
-        @include clamp(font-size, 1rem, 2vw, 1.2rem);
-        opacity: 0;
-        animation: sub-text 0s linear forwards;
-      }
-      @for $i from 0 through 208 {
-        .content-#{$i} {
-          animation-delay: #{$i * 0.03s};
+      &.animated{
+        & .content {
+          @include clamp(font-size, 1rem, 2vw, 1.2rem);
+          opacity: 0;
+          animation: sub-text 0s linear forwards;
+        }
+        @for $i from 0 through 208 {
+          .content-#{$i} {
+            animation-delay: #{$i * 0.03s};
+          }
         }
       }
+      &.static{
+        @include clamp(font-size, 1rem, 2vw, 1.2rem);
+        opacity: 1;
+        animation: none !important;
+      }
     }
-    & .contact{
-      & .link{
-        & .items{
+    & .contact {
+      & .link {
+        & .items {
           background: #000;
           color: #fff;
           padding: 4px 8px;
           outline: solid #000;
-          transition: all .1s ease-in;
-          &:hover{
+          transition: all 0.1s ease-in;
+          &:hover {
             background: #fff;
             color: #000;
             font-weight: 600;

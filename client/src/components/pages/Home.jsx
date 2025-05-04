@@ -8,30 +8,37 @@ console.log(headContent);
 console.log(subContent);
 
 const Home = () => {
-  const [subTime, setSubTime] = useState(false)
-  const [mediaTime, setMediaTime] = useState(false)
+  const [subTime, setSubTime] = useState(false);
+  const [mediaTime, setMediaTime] = useState(false);
+  const [isFirstVisit, setIsFirstVisit] = useState(false);
 
   useEffect(() => {
-    const time = setTimeout(() => {
-      setSubTime(true)
-    }, 6000)
-    return () => clearTimeout(time)
-  })
+    const hasVisited = sessionStorage.getItem('homeVisited');
+    if (!hasVisited) {
+      sessionStorage.setItem('homeVisited', 'true');
+      setIsFirstVisit(true);
 
-  useEffect(() => {
-    const time = setTimeout(() => {
-      setMediaTime(true)
-    }, 6500)
-    return () => clearTimeout(time)
-  })
+      const subTimeout = setTimeout(() => setSubTime(true), 6000);
+      const mediaTimeout = setTimeout(() => setMediaTime(true), 6500);
+
+      return () => {
+        clearTimeout(subTimeout);
+        clearTimeout(mediaTimeout);
+      };
+    } else {
+      setSubTime(true);
+      setMediaTime(true);
+    }
+  }, []);
+
   return (
     <>
       <div className="home flex flex-col items-center justify-center">
         <main className="md:max-w-3/4 h-3/6 flex flex-col items-center gap-2 text-center">
-          <div className="head">
+          <div className={`head ${isFirstVisit ? 'animated' : 'static'}`}>
             {headContent.map((text, i) => <h1 key={i} className={`title title-${i} tracking-widest inline font-bold`}>{text}</h1>)}
           </div>
-          <div className="sub">
+          <div className={`sub ${isFirstVisit ? 'animated' : 'static'}`}>
             {subTime && subContent.map((text, i) => <div key={i} className={`content content-${i} inline font-bold tracking-widest`}>{text}</div>)}
           </div>
           <div className="contact flex flex-col items-center gap-3">
