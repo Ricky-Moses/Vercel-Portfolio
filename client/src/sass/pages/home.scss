@@ -3,6 +3,7 @@
 
 .home {
   font-family: map.get($font, font-courier);
+  font-variant: small-caps;
   height: $height;
   & main {
     & .head {
@@ -19,13 +20,29 @@
     }
     & .sub {
       & .content {
-        @include clamp(font-size, 0.8rem, 2vw, 1rem);
+        @include clamp(font-size, 1rem, 2vw, 1.2rem);
         opacity: 0;
         animation: sub-text 0s linear forwards;
       }
       @for $i from 0 through 208 {
         .content-#{$i} {
           animation-delay: #{$i * 0.03s};
+        }
+      }
+    }
+    & .contact{
+      & .link{
+        & .items{
+          background: #000;
+          color: #fff;
+          padding: 4px 8px;
+          outline: solid #000;
+          transition: all .1s ease-in;
+          &:hover{
+            background: #fff;
+            color: #000;
+            font-weight: 600;
+          }
         }
       }
     }
