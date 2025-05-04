@@ -14,7 +14,7 @@ import Project from './components/pages/Project';
 import Contact from './components/pages/Contact';
 
 const App = () => {
-  const [showIntro, setShowIntro] = useState(false); // For Developing need to - {true}
+  const [showIntro, setShowIntro] = useState(true); // For Developing need to - {true}
   const [isFade, setIsFade] = useState(false);
   const navigate = useNavigate()
 
