@@ -19,7 +19,7 @@ const Home = () => {
       setIsFirstVisit(true);
 
       const subTimeout = setTimeout(() => setSubTime(true), 6000);
-      const mediaTimeout = setTimeout(() => setMediaTime(true), 6500);
+      const mediaTimeout = setTimeout(() => setMediaTime(true), 7000);
 
       return () => {
         clearTimeout(subTimeout);
