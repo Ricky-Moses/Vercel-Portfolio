@@ -2,7 +2,6 @@
 @use "sass:map";
 
 .home {
-  font-family: map.get($font, font-courier);
   font-variant: small-caps;
   height: $height;
   & main {

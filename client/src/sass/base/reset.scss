@@ -1,7 +1,11 @@
+@use './variable.scss' as *;
+@use "sass:map";
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: map.get($font, font-courier);
 }
 
 html, body{

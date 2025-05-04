@@ -3,4 +3,21 @@
 
 .about{
     height: $height;
+    & .ans{
+        & h1{
+            @include clamp(font-size, 1.2rem, 5vw, 2rem);
+        }
+        & .answer{
+            text-transform: capitalize;
+        }
+    }
+    & .qus{
+        & h1{
+            @include clamp(font-size, 1.2rem, 5vw, 2rem);
+            font-variant: small-caps;
+        }
+        & select{
+            background: #80808056;
+        }
+    }
 }
