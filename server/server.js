@@ -1,20 +1,22 @@
 import express from 'express'
 import { MongoClient } from 'mongodb'
 import dotenv from 'dotenv'
+import cors from 'cors'
 
 // Environment
 dotenv.config()
 
 // Instance express
 const app = express()
+app.use(cors())
 
 // Mongodb Setup
 const client = new MongoClient(process.env.MONGO_URL_PORTFOLIO)
 
+await client.connect()
 // Route
 app.get('/', async (req, res) => {
     try{
-        await client.connect()
         const db = client.db('person')
         const collection = db.collection('user')
         const data = await collection.find().toArray()
