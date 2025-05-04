@@ -3,18 +3,23 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
 const API = import.meta.env.VITE_API_URL_PORTFOLIO;
+const about = 'I’m a web developer with a background in Computer Science and a B.Voc in Renewable Energy (2019 – 2024). My journey combines logical thinking and sustainability with hands-on skills in HTML, CSS, JavaScript, React, and modern UI tools. I enjoy building user-friendly applications and constantly strive to grow as a full-stack developer.';
 const About = () => {
 
   const [details, setDetails] = useState([])
+  const [hasData, setHasData] = useState(true)
   const [selectedQuestion, setSelectedQuestion] = useState('')
   const [displayText, setDisplayText] = useState('')
 
+  // Get answer based on selected question
   const answer = details.find(ans => ans.question === selectedQuestion)?.answer
+
+  // Data fetching
   useEffect(() => {
     const data = async () => {
       try {
         const res = await axios.get(API);
-        // console.log('Data:', res.data);
+        console.log('Data:', res.data);
         // console.log('About: ', res?.data[0]?.about);
         setDetails(res?.data[0]?.about)
         if (res?.data[0]?.about?.length > 0) {
@@ -24,20 +29,27 @@ const About = () => {
       catch (err) {
         console.log('Error: ', err.message);
       }
+      finally {
+        setHasData(false)
+      }
     }
     data()
 
-    if(!answer) return;
 
-    setDisplayText('')
+
+  }, []);
+
+  useEffect(() => {
+    if (!answer) return;
+
+    setDisplayText('') // Reset
     let index = 0
     const interval = setInterval(() => {
       setDisplayText(prev => prev + answer[index]);
       index++
-      if(index >= answer.length) clearInterval(interval)
+      if (index >= answer.length - 1) clearInterval(interval)
     }, 20)
-
-  }, [answer]);
+  }, [answer])
 
   // console.log('details: ', details);
   // console.log('Question', selectedQuestion);
@@ -56,7 +68,7 @@ const About = () => {
                   {char}
                 </span>
               ))
-              : "Select a Question To See The Answer"}
+              : about}
           </div>
         </div>
       </div>
@@ -69,9 +81,15 @@ const About = () => {
           value={selectedQuestion}
           onChange={(e) => setSelectedQuestion(e.target.value)}
         >
-          {details && details.map(({ question }) => (
-            <option key={question} value={question}>{question}</option>
-          ))}
+          {hasData ? (
+            <option>Data is fetching....</option>
+          ) : (
+            <>
+              {details && details.map(({ question }) => (
+                <option key={question} value={question}>{question}</option>)
+              )}
+            </>
+          )}
         </select>
       </div>
     </div>

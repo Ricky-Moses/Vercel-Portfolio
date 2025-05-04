@@ -4,8 +4,8 @@ const head = "Hello There, I'm Ricky Moses"
 const sub = "Automation is not the goal — it is the standard. I stylize with surgical precision and deploy with mission-grade stability. I transform logic into landscapes, interactions into outcomes, and data into design."
 const headContent = head.split('')
 const subContent = sub.split('')
-console.log(headContent);
-console.log(subContent);
+// console.log(headContent);
+// console.log(subContent);
 
 const Home = () => {
   const [subTime, setSubTime] = useState(false);

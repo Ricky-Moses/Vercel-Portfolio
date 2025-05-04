@@ -8,7 +8,7 @@ const Open = ({ fadingOut }) => {
         const row = Math.ceil(window.innerHeight / 50)
         setBox(col * row)
     }, [])
-    console.log(box);
+    // console.log(box);
 
     return (
         <div className={`grid-container ${fadingOut ? 'fade-out' : ''} w-dvw h-dvh overflow-hidden relative`}>
