@@ -12,6 +12,10 @@ const Header = () => {
   const currentIndex = routes.indexOf(location.pathname)
   const currentTitle = title[currentIndex] || ''
 
+  const handleHome = () => {
+    navigate('/')
+  }
+
   const handleClickLeft = () => {
     if(currentIndex > 0) navigate(routes[currentIndex - 1])
   }
@@ -22,7 +26,7 @@ const Header = () => {
   return (
     <>
       <div className='header w-dvw h-fit flex items-center justify-between !py-1 !px-5'>
-        <div className="logo">Rm</div>
+        <div className="logo cursor-pointer" onClick={handleHome}>Rm</div>
         <div className="menu flex items-center gap-2">
           <div className="cursor-pointer" onClick={handleClickLeft}>───</div>
           <div className="menu-link w-13 xs:w-16 sm:w-19 md:w-19 lg:w-20 text-center">

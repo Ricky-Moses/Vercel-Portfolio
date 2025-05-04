@@ -36,13 +36,13 @@ const Home = () => {
           </div>
           <div className="contact flex flex-col items-center gap-3">
             {mediaTime && <>
-              <h1 className="font-bold underline">Touch With Me</h1>
+              <h1 className="font-bold underline tracking-widest">Touch With Me</h1>
               <div className="link flex items-center justify-center gap-5 sm:gap-10 lg:gap-20">
-                <a href='' className=""><div className="items">IN</div></a>
-                <a href='' className=""><div className="items">FB</div></a>
-                <a href='' className=""><div className="items">GH</div></a>
-                <a href='' className=""><div className="items">LI</div></a>
-                <a href='' className=""><div className="items">GM</div></a>
+                <a href='http://www.linkedin.com/in/rickymoses08' target='_blank' rel='noopener noreferrer' className=""><div className="items">LI</div></a>
+                <a href='https://www.facebook.com/share/1LDkY5n5M1/' target='_blank' rel='noopener noreferrer' className=""><div className="items">FB</div></a>
+                <a href='https://x.com/rickymoses08?t=lbBmixzhmvwqUB279RQIQA&s=09' target='_blank' rel='noopener noreferrer' className=""><div className="items">XT</div></a>
+                <a href='https://github.com/Ricky-Moses' target='_blank' rel='noopener noreferrer' className=""><div className="items">GH</div></a>
+                <a href='https://mail.google.com/mail/?view=cm&to=rickymoses08122003@gmail.com&su=Hello%20Ricky&body=I%20wanted%20to%20connect%20with%20you.' target='_blank' rel='noopener noreferrer' className=""><div className="items">GM</div></a>
               </div>
             </>}
           </div>
