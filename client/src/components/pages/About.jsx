@@ -35,8 +35,6 @@ const About = () => {
     }
     data()
 
-
-
   }, []);
 
   useEffect(() => {
