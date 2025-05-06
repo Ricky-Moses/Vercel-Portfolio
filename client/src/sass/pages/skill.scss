@@ -3,4 +3,9 @@
 
 .skill{
     height: $height;
+    & .skill-container{
+        & h1{
+            font-variant: small-caps;
+        }
+    }
 }
