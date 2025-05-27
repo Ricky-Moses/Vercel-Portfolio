@@ -1,0 +1,8 @@
+@use "../base/index.scss" as *;
+@use "sass:map";
+
+.header {
+  float:right;
+  position: relative;
+  z-index: 1999;
+}

@@ -1,0 +1,65 @@
+@use "../base/index.scss" as *;
+@use "sass:map";
+
+.expandable-button {
+  display: flex;
+  align-items: center;
+  height: 3.5rem;
+  width: 3.5rem;
+  background-color: map.get($color, _teal);
+  color: map.get($color, _light);
+  padding: 0 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: width 0.2s ease, background-color 0.4s ease, color 0.3s ease;
+
+  & .expandable-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    transform: translateY(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  & .label {
+    margin-left: 1rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    font-size: 1.2em;
+    font-weight: 600;
+
+    &.active {
+      .label-text {
+        display: inline-block;
+      }
+    }
+  }
+
+  &:hover,
+  &.active {
+    width: 8.5rem;
+    color: map.get($color, _light);
+
+    & .label {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  &.active .expandable-icon {
+    animation: icon-anima 0.4s ease-out;
+  }
+}
+
+@keyframes icon-anima {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

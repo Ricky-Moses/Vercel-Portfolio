@@ -1,0 +1,13 @@
+// Position
+@mixin position($v, $t, $l, $x, $y, $z){
+    position: $v;
+    top: $t;
+    left: $l;
+    transform: translate($x, $y);
+    z-index: $z;
+}
+
+// Clamp
+@mixin clamp($pro, $min, $pre, $max){
+    #{$pro}: clamp($min, $pre, $max)
+}
