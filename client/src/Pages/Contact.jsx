@@ -4,6 +4,9 @@ const Contact = () => {
   return (
     <div>
       <BlankAnimation />
+      <div className="">
+        Contact Coming Soon....
+      </div>
     </div>
   )
 }
