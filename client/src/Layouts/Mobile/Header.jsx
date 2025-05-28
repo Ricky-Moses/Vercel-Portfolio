@@ -16,10 +16,32 @@ const iconsArr = [
   { id: 'contact', Icon: MdConnectWithoutContact, route: '/contact', label: 'Contact' },
 ]
 const Header = () => {
+  const navigate = useNavigate()
+  const location = useLocation()
+  const [activeIcon, setActionIcon] = useState(location.pathname)
+
+  useEffect(() => {
+    setActionIcon(location.pathname)
+  }, [location.pathname])
+
+  const navigatePage = (route) => {
+    setActionIcon(route)
+    navigate(route)
+  }
   return (
     <>
       <div className="mobile-header">
-        
+        <div className=" w-full h-full flex items-center justify-center gap-1 !px-2">
+          {iconsArr?.map(({ id, Icon, route, label }) => (
+            <ExpandableButton
+              key={id}
+              icon={Icon}
+              label={label}
+              isActive={activeIcon === route}
+              onClick={() => navigatePage(route)}
+            />
+          ))}
+        </div>
       </div>
       <Outlet />
     </>

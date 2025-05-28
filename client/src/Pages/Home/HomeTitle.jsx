@@ -20,7 +20,7 @@ const HomeTitle = () => {
             transition={{ duration: .2, delay: 1.3 }}
             className='home-title lg:w-9/12 md:h-2/6 lg:h-4/6 flex items-center justify-center'>
             <div className="h-full flex items-center justify-center">
-                <div className="lg:max-w-3/4 h-full flex flex-col items-center lg:items-stretch justify-center gap-0.5 xs:gap-5 lg:gap-2 text-center lg:text-balance">
+                <div className="lg:max-w-3/4 h-full flex flex-col items-center lg:items-stretch justify-center gap-2 xs:gap-5 lg:gap-2 text-center lg:text-balance">
                     <div className="name lg:text-end">
                         <h1 className="">── I'M RICKY MOSES</h1>
                         <h1 className="">WEB DEVELOPER</h1>

@@ -13,6 +13,12 @@
   cursor: pointer;
   overflow: hidden;
   transition: width 0.2s ease, background-color 0.4s ease, color 0.3s ease;
+  @media (max-width: 410px) {
+    height: 3rem;
+    width: 3rem;
+    padding: 0 .8rem;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+  }
 
   & .expandable-icon {
     font-size: 1.5rem;
@@ -29,6 +35,9 @@
     transition: opacity 0.3s ease;
     font-size: 1.2em;
     font-weight: 600;
+    @media (max-width: 410px) {
+      margin-left: 0.4rem;
+    }
 
     &.active {
       .label-text {
@@ -41,7 +50,9 @@
   &.active {
     width: 8.5rem;
     color: map.get($color, _light);
-
+    @media (max-width: 410px) {
+      width: 7.5rem;
+    }
     & .label {
       opacity: 1;
       pointer-events: auto;

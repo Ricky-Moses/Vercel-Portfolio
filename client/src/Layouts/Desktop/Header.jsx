@@ -34,13 +34,13 @@ const Header = () => {
             <div className="desktop-header h-dvh">
                 <div className=" w-full h-full flex flex-col items-center justify-center gap-10 !px-2">
                     {iconsArr?.map(({ id, Icon, route, label }) => (
-                        <ExpandableButton 
+                        <ExpandableButton
                             key={id}
                             icon={Icon}
                             label={label}
                             isActive={activeIcon === route}
                             onClick={() => navigatePage(route)}
-                        />  
+                        />
                     ))}
                 </div>
             </div>

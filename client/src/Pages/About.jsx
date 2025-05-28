@@ -2,7 +2,7 @@ import BlankAnimation from "../Components/BlankAnimation"
 
 const About = () => {
   return (
-    <div>
+    <div className="w-dvw h-dvh">
       <BlankAnimation />
     </div>
   )

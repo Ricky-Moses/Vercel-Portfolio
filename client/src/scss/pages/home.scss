@@ -47,7 +47,7 @@
             transform: scaleX(1);
           }
           & h1{
-            @include clamp(font-size, .5rem, 1vw, 3rem);
+            @include clamp(font-size, .7rem, 1vw, 3rem);
             color: map.get($color, _teal);
           }
           & span{

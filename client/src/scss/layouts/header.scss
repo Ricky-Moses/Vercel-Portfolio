@@ -8,5 +8,5 @@
 }
 
 .mobile-header{
-  
+  @include position(fixed, 95%, 50%, -50%, -50%, 1)
 }
