@@ -1,7 +1,10 @@
+import BlankAnimation from "../Components/BlankAnimation"
 
 const Contact = () => {
   return (
-    <div>Contact</div>
+    <div>
+      <BlankAnimation />
+    </div>
   )
 }
 

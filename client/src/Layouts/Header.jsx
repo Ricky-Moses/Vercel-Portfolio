@@ -14,11 +14,8 @@ const Header = () => {
 
         return () => window.removeEventListener('resize', handleResponsive)
     }, [])
-  return (
-    <div>
-        {isMobile ? <Mobile /> : <Desktop />}
-    </div>
-  )
+  return isMobile ? <Mobile /> : <Desktop />
+
 }
 
 export default Header

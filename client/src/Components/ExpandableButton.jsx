@@ -7,7 +7,7 @@ const ExpandableButton = ({ icon: Icon, label, isActive, onClick }) => {
         >
             <Icon className="expandable-icon" />
             <span className={`label ${isActive ? 'active' : ''}`}>
-                <span className="">{label}</span>
+                <span className="text-white">{label}</span>
             </span>
         </div>
     )

@@ -1,6 +1,6 @@
-import { lazy, Suspense } from "react"
+import { lazy, Suspense, useEffect, useState } from "react"
 import CustomCursor from "./Components/CustomCursor"
-import { RouterProvider, Routes, Route, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Header from "./Layouts/Header"
 // Pages
 const Home = lazy(() => import('./Pages/Home'))
@@ -12,6 +12,15 @@ const Contact = lazy(() => import('./Pages/Contact'))
 import Animation from "./Components/Animation"
 
 const App = () => {
+  const [tablet, setTablet] = useState(window.innerWidth > 992)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setTablet(window.innerWidth > 992)
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  })
   const router = createBrowserRouter([
     {
       path: '/',
@@ -30,7 +39,7 @@ const App = () => {
   ])
   return (
     <>
-      <CustomCursor />
+      {tablet && <CustomCursor />}
       <Suspense fallback={<div className="text-white">Loading...</div>}>
         <RouterProvider router={router} />
       </Suspense>

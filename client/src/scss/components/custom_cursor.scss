@@ -12,3 +12,13 @@
     transition: transform 0.05s ease-in-out;
     mix-blend-mode:exclusion;
 }
+
+.custom-cursor-dot{
+    width: 10px;
+    height: 10px;
+    background: map.get($color, _teal);
+    border-radius: 50%;
+    @include position(fixed, null, null, -50%, -50%, 10000);
+    pointer-events: none;
+    mix-blend-mode: exclusion;
+}

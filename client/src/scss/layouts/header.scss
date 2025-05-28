@@ -1,8 +1,12 @@
 @use "../base/index.scss" as *;
 @use "sass:map";
 
-.header {
+.desktop-header {
   float:right;
   position: relative;
   z-index: 1999;
+}
+
+.mobile-header{
+  
 }

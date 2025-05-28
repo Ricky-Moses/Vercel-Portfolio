@@ -31,8 +31,8 @@ const Header = () => {
     }
     return (
         <>
-            <div className="header h-dvh">
-                <div className="header-container w-full h-full flex flex-col items-center justify-center gap-10 !px-2">
+            <div className="desktop-header h-dvh">
+                <div className=" w-full h-full flex flex-col items-center justify-center gap-10 !px-2">
                     {iconsArr?.map(({ id, Icon, route, label }) => (
                         <ExpandableButton 
                             key={id}

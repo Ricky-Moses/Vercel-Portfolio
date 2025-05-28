@@ -13,9 +13,9 @@ const Home = () => {
         exit={{ opacity: 0, x: 50 }}
         transition={{ duration: .6, delay: 1 }}
       >
-        <div className="home w-dvw h-dvh relative">
+        <div className="home w-dvw h-dvh">
           <div className="back-clip absolute inset-0 -z-1"></div>
-          <div className="home-content w-full h-full flex items-center justify-between absolute inset-0 !px-10">
+          <div className="home-content w-full h-full flex flex-col lg:flex-row items-center justify-center lg:justify-between absolute inset-0 md:!px-10">
             <HomeImg />
             <HomeTitle />
           </div>

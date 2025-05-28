@@ -1,7 +1,10 @@
+import BlankAnimation from "../Components/BlankAnimation"
 
 const Project = () => {
   return (
-    <div>Project</div>
+    <div>
+      <BlankAnimation />
+    </div>
   )
 }
 
