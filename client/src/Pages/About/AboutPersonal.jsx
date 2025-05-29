@@ -27,7 +27,7 @@ const AboutPersonal = () => {
     return (
         <div className="about-personal grid lg:grid-cols-2gap-1 md:!p-2">
             <div className=" flex md:items-center justify-center flex-col md:!p-2">
-                <div className="md:max-w-5/6">
+                <div className="md:max-w-5/6 text-white">
                     <h1 className="font-bold !p-2">PERSONAL INFOS</h1>
                     <div className="info !p-2">
                         {info?.map((infos, idx) => (

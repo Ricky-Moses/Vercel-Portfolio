@@ -9,7 +9,7 @@ const Title = ({
     return (
         <div
             style={{ height: height }}
-            className="page_titles">
+            className="page_titles text-white">
             <div className="w-full h-full flex items-center justify-center relative overflow-hidden">
                 <h1
                     style={{ fontSize: bgFontSize }}
