@@ -40,7 +40,7 @@ const App = () => {
   return (
     <>
       {tablet && <CustomCursor />}
-      <Suspense fallback={<div className="text-white">Loading...</div>}>
+      <Suspense fallback={<div className="text-white h-dvh">Loading...</div>}>
         <RouterProvider router={router} />
       </Suspense>
     </>

@@ -2,9 +2,7 @@
 @use "sass:map";
 
 .desktop-header {
-  float:right;
-  position: relative;
-  z-index: 1999;
+  @include position(fixed, 50%, 95%, -50%, -50%, 1)
 }
 
 .mobile-header{

@@ -1,0 +1,27 @@
+
+const Title = ({
+    bgTitle,
+    headTitle,
+    bgFontSize,
+    headFontSize,
+    height,
+}) => {
+    return (
+        <div
+            style={{ height: height }}
+            className="page_titles">
+            <div className="w-full h-full flex items-center justify-center relative overflow-hidden">
+                <h1
+                    style={{ fontSize: bgFontSize }}
+                    className="word-break font-extrabold tracking-wider opacity-5">
+                    {bgTitle}
+                </h1>
+                <h1 
+                    style={{fontSize: headFontSize}}
+                className="font-bold">{headTitle}</h1>
+            </div>
+        </div>
+    )
+}
+
+export default Title

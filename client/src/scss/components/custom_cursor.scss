@@ -10,7 +10,6 @@
     @include position(fixed, null, null, -50%, -50%, 9999);
     pointer-events: none;
     transition: transform 0.05s ease-in-out;
-    mix-blend-mode:exclusion;
 }
 
 .custom-cursor-dot{
@@ -20,5 +19,5 @@
     border-radius: 50%;
     @include position(fixed, null, null, -50%, -50%, 10000);
     pointer-events: none;
-    mix-blend-mode: exclusion;
+    mix-blend-mode: difference;
 }

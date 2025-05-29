@@ -3,7 +3,7 @@
 
 .blank-animation {
   z-index: 2999;
-  background-color: map.get($color, _teal);
+  background-color: map.get($color, _animate);
   width: 100dvw;
   height: 100dvh;
   transform-origin: bottom;
@@ -15,10 +15,8 @@
 @keyframes bg-remove {
   from {
     transform: scaleY(1);
-    opacity: 1;
   }
   to {
     transform: scaleY(0);
-    opacity: 0;
   }
 }

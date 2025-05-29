@@ -1,0 +1,10 @@
+@use "../base/index.scss" as *;
+@use "sass:map";
+
+.page_titles{
+    & div:nth-of-type(1){
+        & h1:nth-of-type(2){
+            @include position(absolute, 50%, 50%, -50%, -50%, 1)
+        }
+    }
+}
