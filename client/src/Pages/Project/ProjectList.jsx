@@ -138,11 +138,11 @@ const ProjectList = () => {
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: .6, delay: 1 }}
       className='project-list grid place-items-center'>
-      <div className="project-card grid grid-cols-1 md:grid-cols-2 gap-3 place-items-center w-4/5 !py-2">
+      <div className="project-card grid grid-cols-1 md:grid-cols-2 gap-3 place-items-center w-4/5 !py-2 text-white">
         {ProjectListArr?.map((items, idx) => (
           <figure
             key={idx}
-            className="w-5/6 h-full rounded-2xl overflow-hidden ">
+            className="md:w-5/6 h-full rounded-2xl overflow-hidden ">
             <div className="w-full">
               <img className="w-full h-full rounded-2xl transition-all hover:scale-110 hover:-translate-y-5" src={items.img} alt={items.name} />
             </div>

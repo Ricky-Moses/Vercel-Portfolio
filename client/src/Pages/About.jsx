@@ -14,7 +14,7 @@ const About = () => {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -50 }}
         transition={{ duration: .6, delay: 1 }}
-        className="flex flex-col gap-5">
+        className="flex flex-col gap-5 text-white">
         <AboutTitle />
         <AboutPersonal />
         <AboutSkill />
