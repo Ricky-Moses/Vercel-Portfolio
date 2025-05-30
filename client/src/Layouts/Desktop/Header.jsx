@@ -1,8 +1,8 @@
 import { FaHome } from "react-icons/fa";
 import { FaUserCog } from "react-icons/fa";
-import { PiPersonSimpleSkiLight } from "react-icons/pi";
 import { GiFilmProjector } from "react-icons/gi";
 import { MdConnectWithoutContact } from "react-icons/md";
+import { RiBloggerFill } from "react-icons/ri";
 import { Outlet, useLocation, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react";
 import ExpandableButton from "../../Components/ExpandableButton";
@@ -11,9 +11,9 @@ import ExpandableButton from "../../Components/ExpandableButton";
 const iconsArr = [
     { id: 'home', Icon: FaHome, route: '/', label: 'Home' },
     { id: 'about', Icon: FaUserCog, route: '/about', label: 'About' },
-    { id: 'skill', Icon: PiPersonSimpleSkiLight, route: '/skill', label: 'Skill' },
     { id: 'project', Icon: GiFilmProjector, route: '/project', label: 'Project' },
     { id: 'contact', Icon: MdConnectWithoutContact, route: '/contact', label: 'Contact' },
+    { id: 'blog', Icon: RiBloggerFill, route: '/blog', label: 'Blog' },
 ]
 
 const Header = () => {

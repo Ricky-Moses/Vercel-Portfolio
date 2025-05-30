@@ -32,7 +32,7 @@ const HomeTitle = () => {
                     </div>
                     <div className="more w-full h-10 md:h-1/12">
                         <div 
-                        className={`${hover ? 'bg-animate' : ''} w-6/12 md:w-4/12 lg:w-4/12 h-full flex items-center justify-between rounded-3xl !mx-auto lg:!mx-0`}
+                        className={`${hover ? 'bg-animate' : ''} w-6/12 md:w-4/12 h-full flex items-center justify-between !mx-auto lg:!mx-0`}
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                         >

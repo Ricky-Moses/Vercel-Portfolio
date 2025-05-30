@@ -1,18 +1,20 @@
-@use './variables.scss' as *;
-@use 'sass:map';
+@use "./variables.scss" as *;
+@use "sass:map";
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html, body{
-    cursor:none;
-    overflow-y: hidden;
-    
+html,
+body {
+  cursor: none;
+  overflow-x: hidden;
 }
 
-body{
-    background: #1d232a;
+body {
+  background: #1d232a;
 }
+
+

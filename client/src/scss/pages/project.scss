@@ -1,0 +1,14 @@
+@use "../base/index.scss" as *;
+@use "sass:map";
+
+.project {
+  & .project-list {
+    & .project-card {
+      & figure:has(figcaption) {
+        padding: 10px;
+        background: #fff;
+        color: map.get($color, _teal);
+      }
+    }
+  }
+}

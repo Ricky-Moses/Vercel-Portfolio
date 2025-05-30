@@ -1,11 +1,14 @@
 import BlankAnimation from "../Components/BlankAnimation"
+import ProjectList from "./Project/ProjectList"
+import ProjectTitle from "./Project/ProjectTitle"
 
 const Project = () => {
   return (
-    <div>
+    <div className="project max-w-dvw h-dvh">
       <BlankAnimation />
-      <div className="">
-        Project Coming Soon....
+      <div className="flex flex-col gap-5">
+        <ProjectTitle />
+        <ProjectList />
       </div>
     </div>
   )

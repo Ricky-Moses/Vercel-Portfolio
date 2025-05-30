@@ -1,5 +1,10 @@
 @import "tailwindcss";
 @plugin "daisyui";
 @theme {
-    --breakpoint-xs: 410px
+  --breakpoint-xs: 410px;
+}
+
+:root{
+    scrollbar-color: #34D399 transparent;
+    scroll-behavior: smooth;
 }

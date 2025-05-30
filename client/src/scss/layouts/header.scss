@@ -2,9 +2,9 @@
 @use "sass:map";
 
 .desktop-header {
-  @include position(fixed, 50%, 95%, -50%, -50%, 1)
+  @include position(fixed, 50%, 93.5%, -50%, -50%, 2);
 }
 
 .mobile-header{
-  @include position(fixed, 95%, 50%, -50%, -50%, 1)
+  @include position(fixed, 95%, 50%, -50%, -50%, 2)
 }

@@ -15,8 +15,10 @@
 @keyframes bg-remove {
   from {
     transform: scaleY(1);
+    opacity: 1;
   }
   to {
     transform: scaleY(0);
+    opacity: 0;
   }
 }
