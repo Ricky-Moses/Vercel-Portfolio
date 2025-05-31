@@ -28,15 +28,15 @@ const addressData = [
 const socialData = [
     {
         Icon: <FaFacebookF />,
-        link: '',
+        link: 'https://www.facebook.com/share/16M2G1AjqR/',
     },
     {
         Icon: <FaXTwitter />,
-        link: '',
+        link: 'https://x.com/rickymoses08?t=pdch9dfc2MMoR3zs3h0vZA&s=09',
     },
     {
         Icon: <FaLinkedinIn />,
-        link: '',
+        link: 'https://www.linkedin.com/in/rickymoses08/',
     },
     {
         Icon: <FaGithub />,
