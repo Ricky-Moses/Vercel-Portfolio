@@ -6,5 +6,6 @@
 }
 
 .mobile-header{
-  @include position(fixed, 95%, 50%, -50%, -50%, 2)
+  @include position(fixed, 95%, 50%, -50%, -50%, 2);
+  
 }

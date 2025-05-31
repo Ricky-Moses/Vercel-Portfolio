@@ -5,16 +5,16 @@
     width: 40px;
     height: 40px;
     background: map.get($color, _teal);
-    filter: opacity(50%);
     border-radius: 50%;
     @include position(fixed, null, null, -50%, -50%, 9999);
     pointer-events: none;
     transition: transform 0.05s ease-in-out;
+    mix-blend-mode:soft-light;
 }
 
 .custom-cursor-dot{
-    width: 10px;
-    height: 10px;
+    width: 7px;
+    height: 7px;
     background: map.get($color, _teal);
     border-radius: 50%;
     @include position(fixed, null, null, -50%, -50%, 10000);

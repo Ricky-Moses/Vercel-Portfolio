@@ -48,7 +48,7 @@ const AboutEdEx = () => {
                             <span className="w-8 h-8 indicator-item indicator-start badge badge-success text-2xl text-white">{Icon}</span>
                         </div>
                         <div className="flex flex-col gap-3 !py-3">
-                            <div className="badge badge-soft badge-success !bg-success-content !px-1">{year}</div>
+                            <div className="badge badge-soft badge-success !bg-success-content !px-1 border-0">{year}</div>
                             <div className="">
                                 <h2 className="font-bold">{studies} ─ {place}</h2>
                             </div>

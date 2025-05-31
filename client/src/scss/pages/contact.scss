@@ -1,0 +1,35 @@
+@use "../base/index.scss" as *;
+@use "sass:map";
+
+.contact {
+  & .contact-details {
+    & .col1 {
+      & .title {
+        @include clamp(font-size, 1.5rem, 2vw, 2rem);
+        color: map.get($color, _teal);
+      }
+      & .address {
+        & svg {
+          color: map.get($color, _teal);
+          @include clamp(font-size, 1.5rem, 3vw, 2.5rem);
+        }
+      }
+      & .social {
+        & a {
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          &:hover {
+            background: map.get($color, _teal) ;
+          }
+        }
+      }
+    }
+    & .col2{
+        & form{
+            & textarea{
+                height: 100%;
+                max-height: 100%;
+            }
+        }
+    }
+  }
+}
