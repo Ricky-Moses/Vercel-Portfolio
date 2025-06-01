@@ -74,7 +74,7 @@ const UserDetails = () => {
                 <div className="">
                     <input
                         type="submit"
-                        className="btn btn-wide"
+                        className="btn btn-wide border-0 text-white"
                         value='Submit'
                     />
                 </div>

@@ -30,6 +30,7 @@
           background: transparent;
           &[type="submit"] {
             background: map.get($color, _teal);
+            
           }
         }
         & textarea {

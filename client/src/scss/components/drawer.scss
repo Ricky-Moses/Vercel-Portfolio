@@ -1,0 +1,35 @@
+@use "../base/index.scss" as *;
+@use "sass:map";
+
+.drawers {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: map.get($color, _bg);
+  & .exit {
+    position: fixed;
+    right: 0;
+    z-index: 11;
+  }
+  & .head-title {
+    @include clamp(font-size, 1.1rem, 1.8vw, 2rem);
+  }
+  & .post {
+    color: map.get($color, _teal);
+  }
+  & .head-topic {
+    & h1 {
+      @include clamp(font-size, 1.1rem, 1.8vw, 2rem);
+    }
+  }
+  & .advantage {
+    & h1 {
+      @include clamp(font-size, 1.1rem, 1.8vw, 2rem);
+    }
+  }
+  & .disadvantage {
+    & h1 {
+      @include clamp(font-size, 1.1rem, 1.8vw, 2rem);
+    }
+  }
+}

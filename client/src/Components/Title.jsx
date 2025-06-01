@@ -5,6 +5,7 @@ const Title = ({
     bgFontSize,
     headFontSize,
     height,
+    width
 }) => {
     return (
         <div
@@ -17,8 +18,8 @@ const Title = ({
                     {bgTitle}
                 </h1>
                 <h1 
-                    style={{fontSize: headFontSize}}
-                className="font-bold">{headTitle}</h1>
+                    style={{fontSize: headFontSize, width}}
+                className="font-bold text-center">{headTitle}</h1>
             </div>
         </div>
     )

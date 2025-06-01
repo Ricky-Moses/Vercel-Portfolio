@@ -35,7 +35,8 @@
             @include clamp(font-size, 0.7rem, 1vw, 3rem);
             color: map.get($color, _teal);
           }
-          & span {
+          & button {
+            cursor: pointer;
             background: map.get($color, _teal);
           }
         }
