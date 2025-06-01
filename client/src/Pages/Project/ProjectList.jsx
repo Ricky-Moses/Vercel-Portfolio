@@ -22,23 +22,29 @@ const ProjectList = () => {
         className='project-list grid place-items-center'
 
       >
-        <div className="project-card grid grid-cols-1 md:grid-cols-2 gap-3 place-items-center w-4/5 !py-2 text-white">
-          {projectData?.map((items, idx) => (
-            <figure
-              key={idx}
-              className="md:w-5/6 h-full rounded-2xl overflow-hidden "
-              onClick={() => setSelectedList(items)}>
-              <div className="w-full">
-                <img className="w-full h-full rounded-2xl transition-all hover:scale-110 hover:-translate-y-5" src={items?.img} alt={items?.name} />
-              </div>
-              <figcaption className='font-bold italic text-center'>
-                <blockquote className=''>
-                  " {items?.quotes} "
-                </blockquote>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+        {loading ? (
+          <div className="alert alert-info">Loading</div>
+        ) : error ? (
+          <div className="alert alert-error">Error Occurred</div>
+        ) : (
+          <div className="project-card grid grid-cols-1 md:grid-cols-2 gap-3 place-items-center w-4/5 !py-2 text-white">
+            {projectData?.map((items, idx) => (
+              <figure
+                key={idx}
+                className="md:w-5/6 h-full rounded-2xl overflow-hidden "
+                onClick={() => setSelectedList(items)}>
+                <div className="w-full">
+                  <img className="w-full h-full rounded-2xl transition-all hover:scale-110 hover:-translate-y-5" src={items?.img} alt={items?.name} />
+                </div>
+                <figcaption className='font-bold italic text-center'>
+                  <blockquote className=''>
+                    " {items?.quotes} "
+                  </blockquote>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        )}
       </motion.div>
       {selectedList && <List
         name={selectedList.name}

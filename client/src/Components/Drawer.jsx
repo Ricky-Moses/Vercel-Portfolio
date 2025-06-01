@@ -1,4 +1,4 @@
-import { useContext, useEffect, useMemo, useRef } from "react";
+import { useContext, useEffect, useMemo, useRef, useState } from "react";
 import { FetchedDataContext } from "../Context/UseContext";
 import Title from './Title'
 import { MdDateRange } from "react-icons/md";
@@ -9,6 +9,7 @@ const Drawer = ({
     drawerID,
     setDrawerID
 }) => {
+    const [tablet, setTablet] = useState(window.innerWidth < 992)
     const { data } = useContext(FetchedDataContext)
     const selectedBlog = useMemo(() => data[1]?.find(blog => blog.id === drawerID), [data, drawerID])
     const drawerRef = useRef(null)
@@ -24,12 +25,21 @@ const Drawer = ({
         return () => document.removeEventListener('mousedown', closeDrawer)
     }, [setDrawerID])
 
+    useEffect(() => {
+        const handleTablet = () => {
+            setTablet(window.innerWidth < 992)
+        }
+
+        window.addEventListener('resize', handleTablet)
+        return () => window.removeEventListener('resize', handleTablet)
+    })
+
     if (!selectedBlog) return null
     return (
         <div className="drawers relative flex flex-col lg:w-1/2 gap-3 !p-1 overflow-y-scroll text-white" ref={drawerRef}>
-            <div className="exit !p-1 text-2xl" onClick={() => setDrawerID(null)}>
+            {tablet && <div className="exit !p-1 text-2xl" onClick={() => setDrawerID(null)}>
                 <IoIosExit />
-            </div>
+            </div>}
             <Title
                 bgTitle='TAMIL'
                 headTitle={`${selectedBlog?.name}`}
